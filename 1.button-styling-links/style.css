@@ -9,7 +9,6 @@
     text-decoration: none;
     display: inline-block;
     cursor:pointer
-    
 }
 
 
@@ -58,11 +57,11 @@
     color:white
 }
 
-.yt-button:hover{
+.yt-button:hover,.fb-button:hover,.insta-button:hover{
     opacity:0.80;
 }
 
-.yt-button:active{
+.yt-button:active,.fb-button:active,.insta-button:active{
     background-color: green;
 }
 
