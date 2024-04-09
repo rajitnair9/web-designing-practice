@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form - Land of Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #74AA9C;
+            margin: 0;
+            padding: 8px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #74AA9C;
+            text-align: left;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #74AA9C;
+            opacity: 75%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Order Form - Land of Boxes</h2>
+        <form>
+            <table>
+                <tr>
+                    <th>Contact Details</th>
+                    <th>Product Details</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" required><br>
+                        <label for="address">Address:</label><br>
+                        <input type="text" id="address" name="address" required><br>
+                        <label for="telephone">Telephone:</label><br>
+                        <input type="tel" id="telephone" name="telephone" required><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required>
+                    </td>
+                    <td>
+                        <label for="product">Product Name:</label><br>
+                        <select id="product" name="product" required>
+                            <option value="">Select Product</option>
+                            <option value="EconoBox">The EconoBox: Cost R5</option>
+                            <option value="Standard Box">The Standard Box: Cost R10</option>
+                            <option value="Premium Box">The Premium Box: Cost R15</option>
+                            <option value="Deluxe Box">The Deluxe Box: Cost R20</option>
+                            <option value="Super Deluxe Box">The Super Deluxe Box:. Cost R30</option>
+                        </select><br>
+                        <label for="quantity">Quantity:</label><br>
+                        <input type="number" id="quantity" name="quantity" min="1" required>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Method of Payment</th>
+                    <th>Billing Address</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="card-type">Credit Card Type:</label><br>
+                        <select id="card-type" name="card-type" required>
+                            <option value="">Select Card Type</option>
+                            <option value="Visa">Visa</option>
+                            <option value="MasterCard">MasterCard</option>
+                            <option value="American Express">American Express</option>
+                            <option value="Discover">Discover</option>
+                        </select><br>
+                        <label for="card-number">Card Number:</label><br>
+                        <input type="text" id="card-number" name="card-number" required><br>
+                        <label for="expiry-date">Expiry Date:</label><br>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YYYY" required>
+                    </td>
+                    <td>
+                        <label for="billing-address">Billing Address:</label><br>
+                        <input type="text" id="billing-address" name="billing-address" required><br>
+                        <label for="delivery-address">Delivery Address:</label><br>
+                        <input type="text" id="delivery-address" name="delivery-address">
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+</body>
+</html>
