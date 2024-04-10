@@ -1,0 +1,16 @@
+.body {
+    display: grid;
+    place-items: center; /* Centers the grid items horizontally and vertically */
+    height: 100vh; /* Set height to the full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+.styl {
+    padding: 20px;
+    background-color: blue;
+    border: 20px solid black;
+    color: yellow;
+    /* Adjust grid positioning to center the element */
+    grid-column: 3 / span 2; /* Center horizontally */
+    grid-row: 3 / span 2; /* Center vertically */
+}

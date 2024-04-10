@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-color: rgb(39, 35, 35);
+            color:white;
+        }
+        table {
+            width: 50%;
+            border-spacing: 10px;
+            margin: auto;
+        }
+        th, td {
+            border: 3px whitesmoke;
+            border-style: outset;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+        }
+        th {
+            background-color: darkgray;
+            color:white;
+            border-radius: 10px;
+            font-size: larger;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <Marquee direction="left" scrollamount="20" style="margin-top:0%; padding: 0%; border-width:0%;"><h1>Please fill this form carefully!!!<h1></Marquee>
+    <table>
+        <tr>
+            <th colspan="2"><h2>Registration Form</h2></th>
+        </tr>
+        <tr>
+            <td>Full Name:</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Date of Birth:</td>
+            <td><input type="date"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td><input type="radio" name="gender" value="male" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email"></td>
+        </tr>        
+        <tr>
+            <td>Phone number</td>
+            <td><input type="tel"></td>
+        </tr>      
+        <tr>
+            <td>Address</td>
+            <td><textarea name="address" rows="4" cols="50" maxlength="100"></textarea></td>
+        </tr>
+        <tr>
+            <td>Languages</td>
+            <td>
+                Malayalam<input type="checkbox">
+                Marathi<input type="checkbox">
+                English<input type="checkbox">
+                Hindi<input type="checkbox">
+            </td>
+        </tr>
+            <td>City</td>
+            <td><select>
+                <option>Select Your city</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Bangalore</option>
+                <option>Pune</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td colspan="2"  style="text-align: center;"><input type="file" accept="image/png,image/jpg"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="submit" value="Submit" style="padding:10px 15px; background-color: rgb(143, 143, 143);"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
