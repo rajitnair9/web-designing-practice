@@ -1,0 +1,20 @@
+.my-class{
+    background-color: blue ;
+}
+#my-id {
+    background-color: green;
+}
+
+.add{
+    background-color: rgba(94, 249, 143, 0.7);
+    border:none;
+    border-radius: 20px;
+    margin:20px;
+    padding:7px 12px;
+}
+.wish{
+    
+    border:2px black solid;
+    border-radius: 15px;
+    padding:10px 35px;
+}
