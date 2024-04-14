@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator app</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\Rejith Nair\Desktop\web-designing-practice\8.Calculator App\cal.css">
+</head>
+<body>
+    <div id="calculator">
+        <br>
+        <input id="inp" type="text" readonly>
+        <br><br>
+        <button onclick="currentDisplay+='1';
+        document.querySelector('#inp').value=currentDisplay;">1</button>
+        <button onclick="currentDisplay+='2';
+        document.querySelector('#inp').value=currentDisplay;">2</button>
+        <button onclick="currentDisplay+='3';
+        document.querySelector('#inp').value=currentDisplay;">3</button>
+        <button onclick="currentDisplay+='4';
+        document.querySelector('#inp').value=currentDisplay;">4</button>
+        <br><br>
+        <button onclick="currentDisplay+='5';
+        document.querySelector('#inp').value=currentDisplay;">5</button>
+        <button onclick="currentDisplay+='6';
+        document.querySelector('#inp').value=currentDisplay;">6</button>
+        <button onclick="currentDisplay+='7';
+        document.querySelector('#inp').value=currentDisplay;">7</button>
+        <button onclick="currentDisplay+='8';
+        document.querySelector('#inp').value=currentDisplay;">8</button>
+        <br><br>
+        <button onclick="currentDisplay+='9';
+        document.querySelector('#inp').value=currentDisplay;">9</button>
+        <button onclick="currentDisplay+='0';
+        document.querySelector('#inp').value=currentDisplay;">0</button>
+        <button onclick="currentDisplay+='.';
+        document.querySelector('#inp').value=currentDisplay;">.</button>
+        <button onclick="currentDisplay='';
+        document.querySelector('#inp').value=currentDisplay;">c</button>
+        <br><br>
+        <button onclick="currentDisplay+='+';
+        document.querySelector('#inp').value=currentDisplay;">+</button>
+        <button onclick="currentDisplay+='-';
+        document.querySelector('#inp').value=currentDisplay;">-</button>
+        <button onclick="currentDisplay+='*';
+        document.querySelector('#inp').value=currentDisplay;">x</button>
+        <button onclick="currentDisplay+='/';
+        document.querySelector('#inp').value=currentDisplay;">/</button>
+        <br><br>
+        <button onclick="currentDisplay=eval(currentDisplay);
+        document.querySelector('#inp').value=currentDisplay;">=</button> 
+    </div>
+    <script src="C:\Users\Rejith Nair\Desktop\web-designing-practice\8.Calculator App\calscript.js"></script>
+</body>
+</html>
