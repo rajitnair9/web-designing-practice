@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h">.</h1>
+    <form>
+        Name:<input type="text" id="name">
+        Phone:<input type="text" id="phone">
+        Contact:<input type="number" id="con" oninput="contacts()">
+    </form>
+    
+</body>
+<script>
+
+
+    
+
+    function contacts(){
+        v=document.getElementById('con').value
+        document.getElementById('h').innerHTML= v
+        if (v.length>10){
+            alert('nooooooo')
+        }
+    }
+</script>
+</html>
