@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food</title>
+  <style>
+    table,td,th{
+      border: 2px solid black;
+      border-collapse: collapse;
+      text-align: center;
+     
+      
+    }
+    table{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="FoodList('veg')">Veg</button>
+  <button onclick="FoodList('non-veg')">Non-Veg</button>
+  <table width="400" id="tb">
+    <tr>
+      <th>sr</th>
+      <th>Food-Name</th>
+      <th>Quantity-full-price</th>
+      <th>Quantity-half-price</th>
+      <th>Image</th>
+    </tr>
+    <tbody id="fooddata">
+     
+    </tbody>
+  </table>
+  <script>
+    food = ""
+    function FoodList(type){
+      dataveg  = [[1,'palik paneer',200,180,'images/u.jpg'],[2,'veg kolhapuri',250,140,'images/u.jpg'],[3,'paneer tikka',300,180,'images/u.jpg']]
+      datanveg = [[1,'Chicken Handi',300,180,'images/u.jpg'],[2,'Chicken Tikka',250,140,'images/u.jpg'],[3,'Chicken afghani',300,180,'images/u.jpg']]
+
+      if(type=='veg'){
+         
+        for(i=0;i<dataveg.length;i++){
+          food += "<tr>"
+          for(j=0;j<dataveg[i].length;j++){
+            //console.log(dataveg[i][j])
+           
+            if (j==4){
+              food+=`<td><img src='${dataveg[i][j]}' width='50px' height='50px'/></td> `
+            }
+            else{
+              food+=`<td>${dataveg[i][j]}</td>`
+            }
+          }
+          food += "</tr>"
+          console.log(food)
+        }
+
+        document.getElementById('fooddata').innerHTML = food
+        document.getElementById('tb').style.display = 'block';
+      }
+      else if(type=='non-veg'){
+        for(i=0;i<datanveg.length;i++){
+          food += "<tr>"
+          for(j=0;j<datanveg[i].length;j++){
+            //console.log(dataveg[i][j])
+           
+            if (j==4){
+              food+=`<td><img src='${datanveg[i][j]}' width='50px' height='50px'/></td> `
+            }
+            else{
+              food+=`<td>${datanveg[i][j]}</td>`
+            }
+          }
+          food += "</tr>"
+          console.log(food)
+        }
+
+        document.getElementById('fooddata').innerHTML = food
+        document.getElementById('tb').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

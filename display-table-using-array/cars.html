@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        display: none;
+        width:fit-content;
+    }
+    table, tr ,td{
+        border:2px solid black;
+        border-collapse:collapse;
+    }
+    th,td{
+        text-align: center;
+        width: 100px;
+
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 20px;
+        background-color: darkgray;
+        color: black;
+
+    }
+
+    button{
+        background-color: rgba(0,0,0,0.1);
+        padding: 20px 30px;
+        border-radius: 15px;
+    }
+
+
+
+
+</style>
+<body>
+
+
+    <button onclick="carShow()">Car List</button>
+
+    <table id="tb">
+        <tr>
+            <th>Car-Name</th>
+        </tr>
+        <tbody id="cardata">
+        </tbody>
+    </table>
+
+    <table id="tb2">
+        <tr>
+            <th>sr</th>
+            <th>model-Name</th>
+            <th>Fuel-Type</th>
+            <th>Price-Range</th>
+            <th>Image</th>
+        </tr>
+        <tbody id="modeldata">
+        </tbody>
+    </table>
+
+
+<script>
+
+     
+     carobj = {
+        suzuki:[[1,'Maruti Alto K10','Petrol, CNG','₹ 3.99 - 5.96 Lakh','https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/127563/alto-k10-exterior-right-front-three-quarter-58.jpeg?isig=0&q=80'],[2,'Maruti Suzuki S-Presso','Petrol, CNG','₹ 4.26 - 6.11 Lakh','https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/126463/s-presso-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80'],[]],
+        nissan:[[1,'Nissan Magnite','Petrol','₹ 6.00 - 11.11 Lakh','https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/45795/magnite-exterior-left-front-three-quarter-3.jpeg?q=80']],
+        tata:[[1,'Tata Nexon','Petrol, Diesel, CNG','₹ 8.15 - 15.80 Lakh','https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/141873/nexon-facelift-right-front-three-quarter-2.jpeg?isig=0&q=80'],[2,'Tata Punch','Petrol, CNG','₹ 6.13 - 10.20 Lakh','https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/39015/punch-exterior-left-front-three-quarter-4.jpeg?isig=0&q=80']]
+    };
+
+    function carShow(){
+        carlist = "";
+        carlist += '<tr>';
+        for (i = 0;i < Object.keys(carobj).length;i++){
+            carlist += `<td><button onclick="modelShow('${Object.keys(carobj)[i]}')">${Object.keys(carobj)[i]}</button></td>`;
+        }
+        carlist += '</tr>';
+        document.getElementById('cardata').innerHTML = carlist;
+        document.getElementById('tb').style.display = 'block';
+    }
+
+    function modelShow(carname) {
+        modelist = ""; 
+        mname = carobj[carname];
+        for(i = 0;i<mname.length;i++){
+            modelist+="<tr>";
+            for(j = 0;j<mname[i].length;j++){
+                if(j == 4){
+                    modelist+= `<td><img src='${mname[i][j]}' width='auto' height='50px'/></td>`;
+                } else {
+                    modelist+= `<td>${mname[i][j]}</td>`;
+                }
+            }
+            modelist += "</tr>";
+        }
+        document.getElementById('modeldata').innerHTML = modelist; 
+        document.getElementById('tb2').style.display = 'block';
+    }
+
+
+
+</script>
+
+</body>
+</html>

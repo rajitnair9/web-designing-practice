@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <style>
+        .submit-button {
+            position: relative;
+            transition: left 0.5s ease; /* Add smooth transition */
+        }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="return validateForm()">
+        Name: <input type="text" id="name"><br>
+        Phone: <input type="text" id="phone"><br>
+        Contact: <input type="text" id="con"><br>
+        <button class="c submit-button" onmouseover="buttonHover(this)" onmouseout="buttonOut(this)">Submit</button>
+    </form>
+
+    <p id="h"></p>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var contact = document.getElementById('con').value;
+
+            // Check if any of the fields are empty
+            if (name === '' || phone === '' || contact === '') {
+                alert('Please fill in all fields.');
+                return false; // Prevent form submission
+            }
+
+            // You can add additional validation here if needed
+
+            return true; // Allow form submission
+        }
+
+        function buttonHover(button) {
+            var v = document.getElementById('con').value;
+            if (v.length > 10) {
+                button.style.left = '-100px'; // Move the button 100px to the left
+            }
+        }
+
+        function buttonOut(button) {
+            button.style.left = '0'; // Reset button position
+        }
+    </script>
+
+</body>
+</html>
