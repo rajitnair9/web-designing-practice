@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+
+    <form name="fm">
+        From:
+        <select name="from">
+            <option value="INR">Indian Rupees</option>
+            <option value="USD">American</option>
+            <option value="QAR">Qatar</option>
+        </select>
+        <br><br>
+        To:
+        <select name="to">
+            <option value="INR">Indian Rupees</option>
+            <option value="USD">American</option>
+            <option value="QAR">Qatar</option>
+        </select>
+        <br><br>
+        Amount:<input type="number" name="amt"/>
+
+      
+    </form>
+        <input type="submit" onclick="Converter()">
+        <br><br>
+
+        <h1>Converted amount is : <span id="h"></span></h1>
+    
+</body>
+<script>
+    function Converter(){
+        from=document.fm.from.value;
+        to=document.fm.to.value;
+        amount=document.fm.amt.value;
+        fetch(`https://api.exchangerate-api.com/v4/latest/${from}`)
+        .then(re=>re.json())
+        .then(data=>{
+        camount=data['rates'][to]
+        document.getElementById('h').innerHTML=eval(camount*amount);})
+    
+
+    }
+</script>
+</html>

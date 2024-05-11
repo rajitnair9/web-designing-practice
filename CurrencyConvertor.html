@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: aquamarine;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            background-color: rgb(98, 98, 98);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        form {
+            background-color: indigo;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width:50%;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: white;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: lightgray;
+            font-size: 16px;
+        }
+
+        input[type="number"]{
+            display: block;
+            width: 97.5%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: lightgrey;
+            font-size: 16px;
+
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            align-self:center;
+            background-color: maroon;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgba(169,169,169, 0.5);
+        }
+
+        #h1,h1 {
+            font-size: 24px;
+            color: Black;
+            margin-top: 20px;
+        }
+
+        h2{
+            color:white;
+            padding:5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form action="" name="fm">
+            <h2>Currency Converter</h2>
+
+            <div class="from">
+                <label for="">From:</label>
+                <select name="from" id="from">
+
+                </select>
+            </div>
+            <div class="to">
+                <label for="to">To:</label>
+                <select name="to" id="to">
+
+                </select>
+            </div>
+            <div class="amount">
+                <label for="amount">Enter Amount:</label>
+                <input type="number" name="amt" id="" placeholder="Amount">
+            </div>
+        </form>
+        <br><br>
+        <input type="submit" value="Convert" onclick="converter()" id="">
+        <br><br>
+        <h1>Converted Amount is: <span id="h1"></span></h1>
+    </div>
+
+
+
+  
+    <script>
+        fetch('https://api.exchangerate-api.com/v4/latest/INR')
+            .then(re => re.json())
+            .then(data => {
+                d = data['rates']
+                for (i in d) {
+                    document.getElementById('from').innerHTML += `<option value="${i}">${i}</option>`
+                    document.getElementById('to').innerHTML += `<option value="${i}">${i}</option>`
+                }
+
+            })
+
+        function converter() {
+            from = document.fm.from.value
+            to = document.fm.to.value
+            amt = parseFloat(document.fm.amt.value)
+            fetch(`https://api.exchangerate-api.com/v4/latest/${from}`)
+                .then(re => re.json())
+                .then(data => {
+                    console.log(data['rates'][to])
+                    camount = data['rates'][to]
+                    document.getElementById('h1').innerHTML = camount * amt;
+                })
+        }
+    </script>
+</body>
+
+</html>
